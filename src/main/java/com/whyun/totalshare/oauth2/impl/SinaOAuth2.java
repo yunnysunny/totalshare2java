@@ -18,7 +18,7 @@ import com.whyun.util.http.HTTPClientUtil;
 /**
  * The Class SinaOAuth2.
  */
-class SinaOAuth2 extends AbstractOAuth2
+public class SinaOAuth2 extends AbstractOAuth2
 {
     
     /**

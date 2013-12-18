@@ -1,6 +1,6 @@
 package com.whyun.totalshare.bean;
 
-public class OAuthInfo {
+public class OAuth2Info {
 	private String accessToken;
     private String uid;
     private String snsType;
@@ -11,7 +11,7 @@ public class OAuthInfo {
 
     private String gender;
 
-	public OAuthInfo() {
+	public OAuth2Info() {
 		
 	}
 

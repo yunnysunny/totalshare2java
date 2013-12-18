@@ -127,7 +127,7 @@ public class Http {
 
 	public static class IdleConnectionMonitorThread extends Thread {
 		private final HttpClientConnectionManager connMgr;
-		private volatile boolean shutdown;
+		private volatile boolean shutdown = false;
 
 		public IdleConnectionMonitorThread(HttpClientConnectionManager connMgr) {
 			super();

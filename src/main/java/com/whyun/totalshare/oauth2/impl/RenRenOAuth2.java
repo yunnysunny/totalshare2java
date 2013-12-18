@@ -17,7 +17,7 @@ import com.whyun.totalshare.bean.UserInfoResult;
 import com.whyun.totalshare.oauth2.AbstractOAuth2;
 import com.whyun.util.http.HTTPClientUtil;
 
-class RenRenOAuth2 extends AbstractOAuth2
+public class RenRenOAuth2 extends AbstractOAuth2
 {
 	private static Logger logger = Logger.getLogger(RenRenOAuth2.class);
 //	@Override

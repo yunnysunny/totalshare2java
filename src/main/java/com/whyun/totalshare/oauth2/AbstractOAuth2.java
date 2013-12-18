@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.whyun.totalshare.bean.AccessTokenResult;
 import com.whyun.totalshare.bean.MessagePublishResult;
-import com.whyun.totalshare.bean.OAuthInfo;
+import com.whyun.totalshare.bean.OAuth2Info;
 import com.whyun.totalshare.bean.SNSConfigBean;
 import com.whyun.totalshare.bean.UidResult;
 import com.whyun.totalshare.bean.UserInfoResult;
@@ -212,6 +212,7 @@ public abstract class AbstractOAuth2 {
 			{
 				put("client_id", self.clientId);
 				put("redirect_uri", self.redirectUri);
+				put("response_type", "code");
 			}
 		};
 		if (state != null && !"".equals(state)) {
@@ -277,9 +278,14 @@ public abstract class AbstractOAuth2 {
 	public abstract MessagePublishResult publishMessage(String accessToken,
 			String message, String url, String filename,
 			Map<String, String> params);
+	
+	public MessagePublishResult publishMessage(String accessToken,
+			String message, String url) {
+		return publishMessage(accessToken,message,url,null,null);
+	}
 
-	public OAuthInfo getOauthInfo() {
-		OAuthInfo info = new OAuthInfo();
+	public OAuth2Info getOauthInfo() {
+		OAuth2Info info = new OAuth2Info();
 		info.setUid(this.uid);
 		info.setAccessToken(this.accessToken);
 		info.setAvatar(this.avatar);

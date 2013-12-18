@@ -1,5 +1,7 @@
 package com.whyun.totalshare.bean;
 
+import com.alibaba.fastjson.JSON;
+
 public class UserInfoResult {
 	private int rv;
 	private String errmsg;
@@ -38,6 +40,10 @@ public class UserInfoResult {
 	}
 	public void setErrmsg(String errmsg) {
 		this.errmsg = errmsg;
+	}
+	@Override
+	public String toString() {
+		return JSON.toJSONString(this);
 	}
     
 }

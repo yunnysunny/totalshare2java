@@ -187,7 +187,7 @@ public class HTTPClientUtil {
 		} finally {
 			
 			try {
-				client.close();
+				//client.close();
 				if(responseHttp != null) {
 					responseHttp.close();
 				}
