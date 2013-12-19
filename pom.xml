@@ -157,6 +157,30 @@
 					</webAppConfig>
 				</configuration>
 			</plugin>
+			
+			<!-- license header -->
+			<plugin>
+			    <groupId>com.mycila</groupId>
+			    <artifactId>license-maven-plugin</artifactId>
+			    <version>2.3</version>
+			    <configuration>
+			        <header>${basedir}/doc/license.txt</header>
+			        <properties>
+			            
+			        </properties>
+			        <includes>
+						<include>src/main/java/**/*.java</include>
+					</includes>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <goals>
+			                <goal>check</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+			
 		</plugins>
 	</build>
 </project>
