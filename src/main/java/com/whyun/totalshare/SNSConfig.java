@@ -30,8 +30,8 @@ public class SNSConfig {
 		if (configFile == null) {
 			configFile = ConfigFileUtil.getPath(SNSConfig.class, DEFAULT_CONFIG_FILENAME);
 		}
-		File file = new File(configFile);
-		if (file == null || !file.exists()) {
+		File file;
+		if (configFile == null || ((file = new File(configFile)) == null || !file.exists())) {
 			configFile = new JarUtil(SNSConfig.class).getJarPath() + "/" + DEFAULT_CONFIG_FILENAME;
 			file = new File(configFile);
 			if (file == null || !file.exists()) {

@@ -5,6 +5,8 @@ public class SNSConfigBean {
 	private String clientId;
 	private String clientKey;
 	private String scope;
+	private String redirectUri = null;
+	private String accessToken = null;
 	public SNSConfigBean() {
 
 	}
@@ -31,6 +33,18 @@ public class SNSConfigBean {
 	}
 	public void setScope(String scope) {
 		this.scope = scope;
+	}
+	public String getRedirectUri() {
+		return redirectUri;
+	}
+	public void setRedirectUri(String redirectUri) {
+		this.redirectUri = redirectUri;
+	}
+	public String getAccessToken() {
+		return accessToken;
+	}
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 	
 }

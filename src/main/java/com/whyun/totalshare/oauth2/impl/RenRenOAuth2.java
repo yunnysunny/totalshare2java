@@ -28,9 +28,9 @@ public class RenRenOAuth2 extends AbstractOAuth2
 //		return null;
 //	}
 
-    public  RenRenOAuth2(SNSConfigBean config, String redirectUri)
+    public  RenRenOAuth2(SNSConfigBean config)
     {
-        super(config, redirectUri);
+        super(config);
         this.snsType = SNS_TYPE_RENREN;
     }
 

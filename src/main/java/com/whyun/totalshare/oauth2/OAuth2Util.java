@@ -19,31 +19,38 @@ import com.whyun.util.security.RandomString;
 
 public class OAuth2Util {
 	private static Logger logger = Logger.getLogger(OAuth2Util.class);
-	public static AbstractOAuth2 getInstance(String snsType, String redirectUri)
+	public static AbstractOAuth2 getInstance(String snsType, String redirectUri,String accessToken)
 			throws FileNotFoundException
     {
 
 		AbstractOAuth2 instance = null;
 
 		SNSConfig config = SNSConfig.getInstance();
-		SNSConfigBean configNow = null;
+		SNSConfigBean configNow = config.getConfig(snsType);
+		if (configNow != null) {
+			if (redirectUri != null) {
+				configNow.setRedirectUri(redirectUri);
+			}
+			if (accessToken != null) {
+				configNow.setAccessToken(accessToken);
+			}
+		}
         
-		if (AbstractOAuth2.SNS_TYPE_SINA.equals(snsType)) {
-            
-                configNow = config.getConfig(snsType);
-                instance = new SinaOAuth2(configNow, redirectUri);
-		} else if (AbstractOAuth2.SNS_TYPE_TX.equals(snsType)) {
-            
-            	configNow = config.getConfig(snsType);
-                instance = new TxOAuth2(configNow, redirectUri);
-		} else if (AbstractOAuth2.SNS_TYPE_RENREN.equals(snsType)) {
-            
-            	configNow = config.getConfig(snsType);
-                instance = new RenRenOAuth2(configNow, redirectUri);
+		if (AbstractOAuth2.SNS_TYPE_SINA.equals(snsType)) {                
+                instance = new SinaOAuth2(configNow);
+		} else if (AbstractOAuth2.SNS_TYPE_TX.equals(snsType)) {            	
+                instance = new TxOAuth2(configNow);
+		} else if (AbstractOAuth2.SNS_TYPE_RENREN.equals(snsType)) {            	
+                instance = new RenRenOAuth2(configNow);
 		}
 
         return instance;
     }
+	
+	public static AbstractOAuth2 getInstance(String snsType, String redirectUri)
+			throws FileNotFoundException {
+		return getInstance(snsType,redirectUri,null);
+	}
 
     public static String genState(AbstractOAuth2 instance, String redirectUri, HttpSession session)
     {

@@ -21,9 +21,9 @@ public class TxOAuth2 extends AbstractOAuth2
 {
 	private static Logger logger = Logger.getLogger(TxOAuth2.class);
 
-    public  TxOAuth2(SNSConfigBean config, String redirectUri)
+    public  TxOAuth2(SNSConfigBean config)
     {
-        super(config, redirectUri);
+        super(config);
         this.snsType = SNS_TYPE_TX;
     }
 

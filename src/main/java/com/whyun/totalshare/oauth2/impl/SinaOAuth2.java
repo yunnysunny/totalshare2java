@@ -25,11 +25,11 @@ public class SinaOAuth2 extends AbstractOAuth2
      * Instantiates a new sina o auth2.
      *
      * @param config the config
-     * @param redirectUri the redirect uri
+     * 
      */
-    public  SinaOAuth2(SNSConfigBean config, String redirectUri)
+    public  SinaOAuth2(SNSConfigBean config)
     {
-        super(config, redirectUri);
+        super(config);
         this.snsType = SNS_TYPE_SINA;
     }
 
