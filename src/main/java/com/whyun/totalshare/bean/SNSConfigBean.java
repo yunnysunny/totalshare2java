@@ -3,7 +3,7 @@ package com.whyun.totalshare.bean;
 public class SNSConfigBean {
 	private String type;
 	private String clientId;
-	private String clientKey;
+	private String clientSecret;
 	private String scope;
 	private String redirectUri = null;
 	private String accessToken = null;
@@ -22,11 +22,11 @@ public class SNSConfigBean {
 	public void setClientId(String clientId) {
 		this.clientId = clientId;
 	}
-	public String getClientKey() {
-		return clientKey;
+	public String getClientSecret() {
+		return clientSecret;
 	}
-	public void setClientKey(String clientKey) {
-		this.clientKey = clientKey;
+	public void setClientSecret(String clientSecret) {
+		this.clientSecret = clientSecret;
 	}
 	public String getScope() {
 		return scope;

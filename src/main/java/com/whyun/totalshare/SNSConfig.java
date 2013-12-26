@@ -76,8 +76,8 @@ public class SNSConfig {
             					bean.setType(value);
             				} else if ("clientId".equals(name)) {
             					bean.setClientId(value);
-            				} else if ("clientKey".equals(name)) {
-            					bean.setClientKey(value);
+            				} else if ("clientSecret".equals(name)) {
+            					bean.setClientSecret(value);
             				} else if("scope".equals(name)) {
             					bean.setScope(value);
             				}

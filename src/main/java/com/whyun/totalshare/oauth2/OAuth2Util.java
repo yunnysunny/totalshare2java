@@ -68,11 +68,12 @@ public class OAuth2Util {
     {
         
     	Map<String,String> data = null;
-        if (session.getAttribute("state").equals(stateRecive)) {
+    	String stateInSession = (String)session.getAttribute("state");
+        if (stateInSession != null && stateInSession.equals(stateRecive)) {
             data = (Map<String,String>)JSON.parse(Base64.decodeBase64(stateRecive));
             
         } else {
-        	logger.warn("session中的state:" + session.getAttribute("state") 
+        	logger.warn("session中的state:" + stateInSession 
         			+",url中的code：" +stateRecive);
         }
         return data;

@@ -108,23 +108,23 @@ totalshare系列类库是一个汇集常用SNS（现在支持腾讯、sina、人
 	    <sns>
 	        <type>tx</type>
 	        <clientId>100474085</clientId>
-	        <clientKey>4a08759d140b989b8ca4f060e208864a</clientKey>
+	        <clientSecret>4a08759d140b989b8ca4f060e208864a</clientSecret>
 	        <scope></scope>
 	    </sns>
 	    <sns>
 	        <type>sina</type>
 	        <clientId>3499650237</clientId>
-	        <clientKey>59c629bba60e99028f27f6e0de20393d</clientKey>
+	        <clientSecret>59c629bba60e99028f27f6e0de20393d</clientSecret>
 	        <scope></scope>
 	    </sns>
 	    <sns>
 	        <type>renren</type>
 	        <clientId>085cf3221f984299a321a201f5948362</clientId>
-	        <clientKey>d93c0512130540768eb34f5f9720eaa2</clientKey>
+	        <clientSecret>d93c0512130540768eb34f5f9720eaa2</clientSecret>
 	        <scope></scope>
 	    </sns>
 	</app>
-其中tx、sina、renren三个标示分别代表腾讯互联、sina微博和人人网。在OAuth2协议中，在跳转到第三方网站进行登录验证的时候需要提供clientId参数，在获取access token的时候需要提供clientId和clientKey参数。但是对于不同的第三方网站，你注册完开发者账号后，给出的这两个参数的参数名称却是有差别的，腾讯互联中叫APP ID和APP KEY，新浪微博中叫App Key和App Sercet，人人网中叫APP KEY和Secret Key。在实际使用过程中，你注册完成后，将这些参数分别配置到这个配置文件中。同时应该注意，在构造一个AbstractOAuth2对象的时候要传入一个回调地址参数，这个回调地址中的域名必须和注册开发者账号的时候给出的域名一致，这就导致了你在本地测试的时候，不得不修改一下hosts文件将127.0.0.1映射为你注册的域名；当然你如果直接在线上测试就没有这个问题了。最后需要注意一下，在构造AbstractOAuth2对象时要保证，做登录验证前构造的对象和做获取access token是构造的对象，两者传递的redirectUri参数是相同的，否则获取access token的操作就会失败。
+其中tx、sina、renren三个标示分别代表腾讯互联、sina微博和人人网。在OAuth2协议中，在跳转到第三方网站进行登录验证的时候需要提供clientId参数，在获取access token的时候需要提供clientId和clientSecret参数。但是对于不同的第三方网站，你注册完开发者账号后，给出的这两个参数的参数名称却是有差别的，腾讯互联中叫APP ID和APP KEY，新浪微博中叫App Key和App Sercet，人人网中叫APP KEY和Secret Key。在实际使用过程中，你注册完成后，将这些参数分别配置到这个配置文件中。同时应该注意，在构造一个AbstractOAuth2对象的时候要传入一个回调地址参数，这个回调地址中的域名必须和注册开发者账号的时候给出的域名一致，这就导致了你在本地测试的时候，不得不修改一下hosts文件将127.0.0.1映射为你注册的域名；当然你如果直接在线上测试就没有这个问题了。最后需要注意一下，在构造AbstractOAuth2对象时要保证，做登录验证前构造的对象和做获取access token是构造的对象，两者传递的redirectUri参数是相同的，否则获取access token的操作就会失败。
 
 ## license ##
 Copyright 2013 whyun.com

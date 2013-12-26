@@ -3,19 +3,19 @@
     <sns>
         <type>tx</type>
         <clientId>100474085</clientId>
-        <clientKey>4a08759d140b989b8ca4f060e208864a</clientKey>
+        <clientSecret>4a08759d140b989b8ca4f060e208864a</clientSecret>
         <scope></scope>
     </sns>
     <sns>
         <type>sina</type>
         <clientId>3499650237</clientId>
-        <clientKey>59c629bba60e99028f27f6e0de20393d</clientKey>
+        <clientSecret>59c629bba60e99028f27f6e0de20393d</clientSecret>
         <scope></scope>
     </sns>
     <sns>
         <type>renren</type>
         <clientId>085cf3221f984299a321a201f5948362</clientId>
-        <clientKey>d93c0512130540768eb34f5f9720eaa2</clientKey>
+        <clientSecret>d93c0512130540768eb34f5f9720eaa2</clientSecret>
         <scope></scope>
     </sns>
 </app>

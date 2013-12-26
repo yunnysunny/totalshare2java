@@ -133,8 +133,8 @@ public abstract class AbstractOAuth2 {
 
 	/** client_id . */
 	protected String clientId;
-	/** client_key. */
-	protected String clientKey;
+	/** client_secret. */
+	protected String clientSecret;
 
 	/** The scope. */
 	protected String scope;
@@ -167,7 +167,7 @@ public abstract class AbstractOAuth2 {
 	 */
 	public AbstractOAuth2(SNSConfigBean config) {
 		this.clientId = config.getClientId();
-		this.clientKey = config.getClientKey();
+		this.clientSecret = config.getClientSecret();
 		this.scope = config.getScope();
 		this.redirectUri = config.getRedirectUri();
 		this.accessToken = config.getAccessToken();
@@ -244,7 +244,7 @@ public abstract class AbstractOAuth2 {
 	protected String getAccessTokenStr(String accessTokenUrl, String code) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("client_id", this.clientId);
-		params.put("client_secret", this.clientKey);
+		params.put("client_secret", this.clientSecret);
 		params.put("code", code);
 		params.put("grant_type", "authorization_code");
 		params.put("redirect_uri", this.redirectUri);
